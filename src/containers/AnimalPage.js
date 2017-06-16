@@ -1,31 +1,8 @@
 import React from 'react';
 
 import AnimalPage from '../components/AnimalPage';
+import stubMissions from '../api/stubMissions.json';
 
-
-const bessieMissions = [{
-    event: {
-        id: '965faee5-07f7-4b5f-9af5-21bf97c6a970',
-        name: 'Broken Leg Rattlesnake Ledge',
-        stateNumber: '17-1852',
-        location: 'North Bend',
-        start: '2017-05-27T14:28:00+00:00',
-        stop: '2017-05-27T16:40:00+00:00'
-    },
-    miles: 0,
-    hours: 1.0
-}, {
-    event: {
-        id: '73377c81-4d2e-4c2f-a481-2d7101ff021d',
-        name: 'Chirico trail Ankle Injury',
-        stateNumber: '17-1848',
-        location: 'Issaquah',
-        start: '2017-05-27T11:18:00+00:00',
-        stop: '2017-05-27T15:00:00+00:00'
-    },
-    miles: 0,
-    hours: 2.4666666666666668
-}];
 
 const bessie = {
     name: 'Bessie',
@@ -57,6 +34,6 @@ const prepareMissionData = missions => (
 export default () => (
     <AnimalPage
         animal={bessie}
-        missions={prepareMissionData(bessieMissions)}
+        missions={prepareMissionData(stubMissions.data)}
     />
 );

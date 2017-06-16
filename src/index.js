@@ -7,6 +7,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import muiTheme from './theme';
 import jsonApiData from './reducers/jsonApiData';
 import AnimalPage from './containers/AnimalPage';
 import AnimalsPage from './containers/AnimalsPage';
@@ -23,7 +24,7 @@ injectTapEventPlugin();
 
 
 const SiteRouter = () => (
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={muiTheme} >
         <BrowserRouter>
             <div>
                 <Route path="/" component={PrimaryNavigation} />

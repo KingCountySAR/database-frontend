@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom';
 const SelectableList = makeSelectable(List);
 
 class PrimaryNavigation extends React.Component {
-    static propTypes = { // eslint-disable-line
+    static propTypes = {
         history: PropTypes.shape({
             push: PropTypes.func.isRequired
         }).isRequired,
@@ -23,12 +23,12 @@ class PrimaryNavigation extends React.Component {
         };
     }
 
-    onChangeList = (event, value) => { // eslint-disable-line
+    onChangeList = (event, value) => {
         this.props.history.push(value);
         this.handleToggle();
     }
 
-    handleToggle = () => this.setState({ // eslint-disable-line
+    handleToggle = () => this.setState({
         open: !this.state.open
     });
 
