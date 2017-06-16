@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader } from 'material-ui/Card';
 
-import styles from './Page.scss';
 import MembersTable from './MembersTable';
 import { memberProp } from '../propTypes';
+import Page from './Page';
 
 
 const MembersPage = ({ members }) => (
-    <div className={styles.content}>
+    <Page>
         <Card>
             <CardHeader title="Members" subtitle="List of Members in SAR" />
             <MembersTable members={members} />
         </Card>
-    </div>
+    </Page>
 );
 
 MembersPage.propTypes = {

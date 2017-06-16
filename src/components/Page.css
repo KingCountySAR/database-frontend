@@ -1,12 +1,14 @@
-.content {
+.Page {
     margin: 20px;
     font-size: 20px;
+}
 
-    >div {
+.Page>div {
         margin-bottom: 32px;
     }
 
-    @media(max-width: 640px) {
+@media(max-width: 640px) {
+    .Page {
         margin: 24px;
     }
 }

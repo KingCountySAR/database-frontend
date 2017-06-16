@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 
-import styles from './Page.scss';
 import MissionsTable from './MissionsTable';
 import { missionProp, animalProp } from '../propTypes';
+import Page from './Page';
 
 
 const AnimalPage = ({ animal, missions }) => (
-    <div className={styles.content}>
+    <Page>
         <Card>
             <CardHeader
                 title={animal.name}
@@ -25,8 +25,8 @@ const AnimalPage = ({ animal, missions }) => (
             <CardHeader title="Missions" subtitle={`Missions ${animal.name} has responded to`} />
             <MissionsTable missions={missions} />
         </Card>
-    </div>
-    );
+    </Page>
+);
 
 
 AnimalPage.propTypes = {

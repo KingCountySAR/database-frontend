@@ -1,4 +1,4 @@
-export function get(url) {
+export function get(url) { // eslint-disable-line import/prefer-default-export
     return fetch(url, {
         credentials: 'same-origin',
         method: 'GET',

@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader } from 'material-ui/Card';
 
-import styles from './Page.scss';
 import MissionsTable from './MissionsTable';
 import { missionProp } from '../propTypes';
+import Page from './Page';
 
 
 const MemberPage = ({ missions }) => (
-    <div className={styles.content}>
+    <Page>
         <Card>
             <CardHeader
                 title="Jaime McCandless"
@@ -20,7 +20,7 @@ const MemberPage = ({ missions }) => (
             <CardHeader title="Missions" subtitle="Missions Jaime has responded to" />
             <MissionsTable missions={missions} />
         </Card>
-    </div>
+    </Page>
     );
 
 
