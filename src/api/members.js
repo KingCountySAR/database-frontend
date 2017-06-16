@@ -1,26 +1,6 @@
+import stubMembersResponse from './stubMembers.json';
 // import { get } from './request';
 
-
-const stubMembersResponse = {
-    data: [
-        {
-            type: 'members',
-            id: 'jaime',
-            attributes: {
-                name: 'Jaime McCandless',
-                demNumber: 'SR00218',
-            },
-        },
-        {
-            type: 'members',
-            id: 'jason',
-            attributes: {
-                name: 'Jason Curtis',
-                demNumber: 'SR00213',
-            },
-        }
-    ],
-};
 
 export function getMembers() { // eslint-disable-line  import/prefer-default-export
     // return get('/api/members');
