@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader } from 'material-ui/Card';
 
-import styles from './MembersPage.scss';
+import styles from './Page.scss';
 import MembersTable from './MembersTable';
 import { memberProp } from '../propTypes';
 

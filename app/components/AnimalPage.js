@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 
-import styles from './MemberPage.scss';
+import styles from './Page.scss';
 import MissionsTable from './MissionsTable';
 import { missionProp, animalProp } from '../propTypes';
 
