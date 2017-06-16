@@ -17,6 +17,7 @@ export const memberProp = PropTypes.shape({
 });
 
 export const animalProp = PropTypes.shape({
+    id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,

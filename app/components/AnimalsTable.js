@@ -17,7 +17,7 @@ const AnimalsTableRow = ({ animal }) => {
 
     return (
         <TableRow>
-            <TableRowColumn>{name}</TableRowColumn>
+            <TableRowColumn><Link to={`/animals/${animal.id}`}>{name}</Link></TableRowColumn>
             <TableRowColumn>{type}</TableRowColumn>
             <TableRowColumn>{status}</TableRowColumn>
             {owner && <TableRowColumn><Link to={`/members/${owner.id}`}>{owner.name} </Link></TableRowColumn>}

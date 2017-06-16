@@ -7,6 +7,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import jsonApiData from './reducers/jsonApiData';
+import AnimalPage from './containers/AnimalPage';
 import AnimalsPage from './containers/AnimalsPage';
 import MembersPage from './containers/MembersPage';
 import MemberPage from './containers/MemberPage';
@@ -26,6 +27,7 @@ const SiteRouter = () => (
                 <Route exact path="/members" component={MembersPage} />
                 <Route exact path="/members/:memberId" component={MemberPage} />
                 <Route exact path="/animals" component={AnimalsPage} />
+                <Route exact path="/animals/:memberId" component={AnimalPage} />
             </div>
         </BrowserRouter>
     </MuiThemeProvider>
