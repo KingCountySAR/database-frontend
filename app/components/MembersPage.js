@@ -1,12 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './MembersPage.scss';
+import PropTypes from 'prop-types';
+import { Card, CardHeader } from 'material-ui/Card';
 
-const MembersPage = () => (
+import styles from './MembersPage.scss';
+import MembersTable from './MembersTable';
+import { memberProp } from '../propTypes';
+
+
+const MembersPage = ({ members }) => (
     <div className={styles.content}>
-        Welcome to the KCSARA members list!
-        See <Link to="/members/jaime">Jaime</Link>
+        <Card>
+            <CardHeader title="Members" subtitle="List of Members in SAR" />
+            <MembersTable members={members} />
+        </Card>
     </div>
 );
+
+MembersPage.propTypes = {
+    members: PropTypes.arrayOf(memberProp),
+};
+
+MembersPage.defaultProps = {
+    members: [],
+};
+
 
 export default MembersPage;

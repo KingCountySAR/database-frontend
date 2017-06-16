@@ -8,7 +8,7 @@ import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import jsonApiData from './reducers/jsonApiData';
 import AnimalsPage from './containers/AnimalsPage';
-import MembersPage from './components/MembersPage';
+import MembersPage from './containers/MembersPage';
 import MemberPage from './containers/MemberPage';
 import PrimaryNavigation from './components/PrimaryNavigation';
 import '../scss/global.scss';

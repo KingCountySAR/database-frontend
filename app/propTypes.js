@@ -10,9 +10,10 @@ export const missionProp = PropTypes.shape({
 });
 
 export const memberProp = PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
+    demNumber: PropTypes.string.isRequired,
 });
 
 export const animalProp = PropTypes.shape({
