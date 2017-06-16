@@ -10,8 +10,7 @@ export const missionProp = PropTypes.shape({
 });
 
 export const memberProp = PropTypes.shape({
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     demNumber: PropTypes.string.isRequired,
 });

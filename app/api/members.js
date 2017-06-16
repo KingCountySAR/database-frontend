@@ -7,8 +7,7 @@ const stubMembersResponse = {
             type: 'members',
             id: 'jaime',
             attributes: {
-                firstName: 'Jaime',
-                lastName: 'McCandless',
+                name: 'Jaime McCandless',
                 demNumber: 'SR00218',
             },
         },
@@ -16,8 +15,7 @@ const stubMembersResponse = {
             type: 'members',
             id: 'jason',
             attributes: {
-                firstName: 'Jason',
-                lastName: 'Curtis',
+                name: 'Jason Curtis',
                 demNumber: 'SR00213',
             },
         }

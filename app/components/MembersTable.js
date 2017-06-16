@@ -15,7 +15,7 @@ import { memberProp } from '../propTypes';
 const MembersTableRow = ({ member }) => (
     <TableRow>
         <TableRowColumn>
-            <Link to={`/members/${member.id}`}>{`${member.firstName} ${member.lastName}`.trim()}</Link>
+            <Link to={`/members/${member.id}`}>{`${member.name}`.trim()}</Link>
         </TableRowColumn>
         <TableRowColumn>{member.demNumber}</TableRowColumn>
     </TableRow>
