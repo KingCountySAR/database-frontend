@@ -32,14 +32,27 @@ module.exports = options => {
                     // Transpile JSX and ES2015
                     test: /\.jsx?$/,
                     exclude: /\/node_modules\//,
-                    loader: 'babel',
-                    query: {
-                        presets: [
-                            'babel-preset-react',
-                            'babel-preset-es2015',
-                            'babel-preset-stage-2',
-                        ].map(require.resolve),
-                    },
+                    loaders: [
+                        {
+                            loader: 'babel',
+                            query: {
+                                presets: [
+                                    'babel-preset-react',
+                                    'babel-preset-es2015',
+                                    'babel-preset-stage-2',
+                                ].map(require.resolve),
+                            }
+                        },
+                        {
+                            // Note: this loader must remain last for js to make sure
+                            // it gets untouched files
+                            loader: 'eslint-loader',
+                            options: {
+                                // This is just a convenience; don't block loading
+                                emitWarning: true,
+                            },
+                        }
+                    ]
                 },
                 {
                     // Basic CSS/Sass Loaders
