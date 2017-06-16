@@ -11,7 +11,7 @@ import {
 
 import { missionProp } from '../propTypes';
 
-const MissionsTableRow = ({mission}) => (
+const MissionsTableRow = ({ mission }) => (
     <TableRow>
         <TableRowColumn>{mission.demNumber}</TableRowColumn>
         <TableRowColumn>{mission.date.toISOString().slice(0, 10)}</TableRowColumn>

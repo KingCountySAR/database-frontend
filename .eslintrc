@@ -1,4 +1,5 @@
 extends:
+  - react-app
   - eslint-config-airbnb
   - plugin:import/errors
   - plugin:import/warnings

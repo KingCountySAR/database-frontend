@@ -1,4 +1,4 @@
-import { get } from './request';
+// import { get } from './request';
 
 
 const stubMembersResponse = {
@@ -22,7 +22,7 @@ const stubMembersResponse = {
     ],
 };
 
-export function getMembers() {
+export function getMembers() { // eslint-disable-line  import/prefer-default-export
     // return get('/api/members');
     return Promise.resolve(stubMembersResponse);
 }

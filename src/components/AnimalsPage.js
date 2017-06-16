@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader } from 'material-ui/Card';
 
-import styles from './Page.scss';
+import Page from './Page';
 import AnimalsTable from './AnimalsTable';
 import { animalProp } from '../propTypes';
 
 
 const AnimalsPage = ({ animals }) => (
-    <div className={styles.content}>
+    <Page>
         <Card>
             <CardHeader title="Animals" subtitle="List of Animals in SAR" />
             <AnimalsTable animals={animals} />
         </Card>
-    </div>
+    </Page>
 );
 
 AnimalsPage.propTypes = {
