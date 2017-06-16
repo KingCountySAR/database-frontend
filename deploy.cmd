@@ -98,11 +98,14 @@ call :SelectNodeVersion
 
 :: 3. Install npm packages
 IF EXIST "%DEPLOYMENT_SOURCE%\package.json" (
-  call :ExecuteCmd !NPM_CMD! install
+  echo Ensuring yarn is installed
+  call yarn --version || call :ExecuteCmd npm install -g yarn
+
+  call :ExecuteCmd yarn install --production=false
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-call :ExecuteCmd !NPM_CMD! run build
+call :ExecuteCmd yarn run build
 
 :: 1. KuduSync
 IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
