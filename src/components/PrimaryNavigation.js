@@ -7,6 +7,8 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import { List, ListItem, makeSelectable } from 'material-ui/List';
 import { withRouter } from 'react-router-dom';
 
+import userManager from '../userManager';
+
 const SelectableList = makeSelectable(List);
 
 class PrimaryNavigation extends React.Component {
@@ -21,6 +23,10 @@ class PrimaryNavigation extends React.Component {
         this.state = {
             open: false
         };
+    }
+
+    componentWillMount() {
+        userManager.signinRedirect();
     }
 
     onChangeList = (event, value) => {

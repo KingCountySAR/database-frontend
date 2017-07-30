@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { loadUser } from 'redux-oidc';
 
 import muiTheme from './theme';
 import jsonApiData from './reducers/jsonApiData';
@@ -15,6 +16,7 @@ import MembersPage from './containers/MembersPage';
 import MemberPage from './containers/MemberPage';
 import PrimaryNavigation from './components/PrimaryNavigation';
 import registerServiceWorker from './registerServiceWorker';
+import userManager from './userManager';
 import './index.css';
 // import roboto from 'css/roboto/roboto-fontface';
 
@@ -47,6 +49,7 @@ const store = createStoreWithMiddleware(
     {},
     window.devToolsExtension && window.devToolsExtension()
 );
+loadUser(store, userManager);
 
 const App = (
     <Provider store={store}>
