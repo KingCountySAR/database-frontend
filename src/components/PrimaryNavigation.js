@@ -14,6 +14,7 @@ const SelectableList = makeSelectable(List);
 class PrimaryNavigation extends React.Component {
     static propTypes = {
         user: PropTypes.object, // TODO replace with actual shape
+        isLoadingUser: PropTypes.bool,
         history: PropTypes.shape({
             push: PropTypes.func.isRequired
         }).isRequired,
@@ -25,20 +26,22 @@ class PrimaryNavigation extends React.Component {
             open: false
         };
     }
-
-    componentWillMount() {
-        const { user } = this.props;
-        console.log('user is', user);
-        // Currently this redirect takes us to a dead end:
-        // ("The client application is not known or is not authorized.")
-        // if (!user) {
-        //     userManager.signinRedirect();
-        // }
+    componentWillReceiveProps(nextProps) {
+        this.loginIfNeeded(nextProps);
     }
 
     onChangeList = (event, value) => {
         this.props.history.push(value);
         this.handleToggle();
+    }
+
+    loginIfNeeded({ user, isLoadingUser }) {
+        console.log('user is', user);
+        if (!user && !isLoadingUser) {
+            const { pathname, search, hash } = this.props.history.location;
+            sessionStorage.redirect = `${pathname}${search}${hash}`;
+            userManager.signinRedirect();
+        }
     }
 
     handleToggle = () => this.setState({
