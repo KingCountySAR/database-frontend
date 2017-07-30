@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { loadUser } from 'redux-oidc';
+import { loadUser, reducer as oidcReducer } from 'redux-oidc';
 
 import muiTheme from './theme';
 import jsonApiData from './reducers/jsonApiData';
@@ -14,7 +14,7 @@ import AnimalPage from './containers/AnimalPage';
 import AnimalsPage from './containers/AnimalsPage';
 import MembersPage from './containers/MembersPage';
 import MemberPage from './containers/MemberPage';
-import PrimaryNavigation from './components/PrimaryNavigation';
+import PrimaryNavigation from './containers/PrimaryNavigation';
 import registerServiceWorker from './registerServiceWorker';
 import userManager from './userManager';
 import './index.css';
@@ -40,6 +40,7 @@ const SiteRouter = () => (
 );
 
 const rootReducer = combineReducers({
+    oidc: oidcReducer,
     jsonApiData,
 });
 

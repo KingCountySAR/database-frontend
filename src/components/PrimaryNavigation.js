@@ -13,6 +13,7 @@ const SelectableList = makeSelectable(List);
 
 class PrimaryNavigation extends React.Component {
     static propTypes = {
+        user: PropTypes.object, // TODO replace with actual shape
         history: PropTypes.shape({
             push: PropTypes.func.isRequired
         }).isRequired,
@@ -26,7 +27,13 @@ class PrimaryNavigation extends React.Component {
     }
 
     componentWillMount() {
-        userManager.signinRedirect();
+        const { user } = this.props;
+        console.log('user is', user);
+        // Currently this redirect takes us to a dead end:
+        // ("The client application is not known or is not authorized.")
+        // if (!user) {
+        //     userManager.signinRedirect();
+        // }
     }
 
     onChangeList = (event, value) => {
