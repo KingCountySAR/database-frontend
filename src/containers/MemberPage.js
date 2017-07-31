@@ -1,6 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import build from 'redux-object';
 
 import MemberPage from '../components/MemberPage';
+import { fetchMember } from '../actions/jsonApiData';
+import { memberProp } from '../propTypes';
+
 import stubMissions from '../api/stubMissions.json';
 
 
@@ -20,6 +26,41 @@ const prepareMissionData = missions => (
 );
 
 
-export default () => (
-    <MemberPage missions={prepareMissionData(stubMissions.data)} />
-);
+class MemberPageContainer extends React.Component {
+    componentWillMount() {
+        this.props.fetchMember();
+    }
+
+    render() {
+        return (
+            <MemberPage
+                member={this.props.member}
+                missions={prepareMissionData(stubMissions.data)}
+            />
+        );
+    }
+}
+
+MemberPageContainer.propTypes = {
+    fetchMember: PropTypes.func.isRequired,
+    member: memberProp,
+};
+
+MemberPageContainer.defaultProps = {
+    member: {},
+};
+
+const mapStateToProps = (state, ownProps) => ({
+    member: build(state.jsonApiData, 'members', ownProps.match.params.memberId),
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    fetchMember: () => {
+        dispatch(fetchMember(ownProps.match.params.memberId));
+    }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MemberPageContainer);

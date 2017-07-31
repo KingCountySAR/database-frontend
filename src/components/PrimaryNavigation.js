@@ -14,8 +14,11 @@ const SelectableList = makeSelectable(List);
 class PrimaryNavigation extends React.Component {
     static propTypes = {
         user: PropTypes.object, // TODO replace with actual shape
-        isLoadingUser: PropTypes.bool,
+        isLoadingUser: PropTypes.bool.isRequired,
         history: PropTypes.shape({
+            location: PropTypes.string.isRequired,
+            search: PropTypes.string.isRequired,
+            hash: PropTypes.string.isRequired,
             push: PropTypes.func.isRequired
         }).isRequired,
     }
@@ -36,7 +39,6 @@ class PrimaryNavigation extends React.Component {
     }
 
     loginIfNeeded({ user, isLoadingUser }) {
-        console.log('user is', user);
         if (!user && !isLoadingUser) {
             const { pathname, search, hash } = this.props.history.location;
             sessionStorage.redirect = `${pathname}${search}${hash}`;

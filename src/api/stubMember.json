@@ -1,0 +1,27 @@
+{
+    "first": "Jaime",
+    "middle": null,
+    "last": "McCandless",
+    "gender": "Unknown",
+    "wacLevel": "None",
+    "wacLevelDate": "0001-01-01T00:00:00",
+    "birthDate": null,
+    "backgroundKnown": true,
+    "workerNumber": "SR00218",
+    "photo": "McCandless36eb807a-5087-489e-9bfc-85c8d83f3013.jpg",
+    "units": [{
+        "unit": {
+            "id": "c2f99bb4-3056-4097-9345-4b8797f40e10",
+            "name": "ESAR"
+        },
+        "status": "active"
+    }, {
+        "unit": {
+            "id": "41f75bea-a23e-45fe-bbe8-d300db472bb9",
+            "name": "SMR"
+        },
+        "status": "Field"
+    }],
+    "id": "7b9347b1-bccd-4469-8380-046bb98d4f58",
+    "name": "Jaime McCandless"
+}
