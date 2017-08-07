@@ -1,14 +1,14 @@
-import stubMembersResponse from './stubMembers.json';
-import stubMemberResponse from './stubMember.json';
-// import { get } from './request';
+//import stubMembersResponse from './stubMembers.json';
+//import stubMemberResponse from './stubMember.json';
+import { getApi as get } from './request';
 
 
 export function getMembers() {
-    // return get('/api/members');
-    return Promise.resolve(stubMembersResponse);
+    return get('/api/members');
+    //return Promise.resolve(stubMembersResponse);
 }
 
 export function getMember(memberId) {
-    // return get(`https://database.kcsara.org/api2/member/${memberId}`);
-    return Promise.resolve(stubMemberResponse);
+    return get(`/api/members/${memberId}`);
+    //return Promise.resolve(stubMemberResponse);
 }

@@ -6,3 +6,7 @@ export function get(url) { // eslint-disable-line import/prefer-default-export
    .then(response => response.json())
    .catch(error => console.log(error));
 }
+
+export function getApi(relativeUrl) {
+    return get('http://localhost:8080' + relativeUrl)
+}

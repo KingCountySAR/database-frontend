@@ -24,28 +24,12 @@ export const fetchMembers = (dispatch) => {
     });
 };
 
-
-// API response is not JSONAPI conformant (yet!)
-const transformMemberToJsonAPI = (response) => {
-    const { name, workerNumber, id } = response;
-    return {
-        data: {
-            id,
-            type: 'members',
-            attributes: {
-                name,
-                demNumber: workerNumber
-            },
-        }
-    };
-};
-
 export const fetchMember = memberId => (
     (dispatch) => {
         dispatch(requestJsonApiData());
 
         getMember(memberId).then((response) => {
-            dispatch(receieveJsonApiData(normalize(transformMemberToJsonAPI(response))));
+            dispatch(receieveJsonApiData(normalize(response)));
         });
     }
 );
